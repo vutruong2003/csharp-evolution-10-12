@@ -104,3 +104,5 @@ public class CollectionExpression : IExecFunction
             """);
     }
 }
+
+file record Employee(string firstName, string lastName, int grade);
