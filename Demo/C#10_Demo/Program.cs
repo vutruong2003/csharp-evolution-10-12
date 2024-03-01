@@ -1,10 +1,34 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using C_10_Demo.Pieces;
 
-Console.WriteLine("Hello, World!");
+while (true)
+{
 
-// Piece 02
+    Console.Clear();
 
-//ConstantsInterpolatedStrings.Execute();
+    Console.WriteLine("C# 10 Demo");
+    Console.Write("Enter a function by number: ");
+    Console.Out.Flush();
+    var input = (Console.ReadLine() ?? "").ToLower();
 
-LambdaExpressionImprovement.Execute();
+    switch (input)
+    {
+        case "0":
+            ConstantsInterpolatedStrings.Execute();
+            break;
+        case "1":
+            ExtendedPropertyPatterns.Execute();
+            break;
+        case "2":
+            LambdaExpressionImprovement.Execute();
+            break;
+        case "3":
+            AssignmentDeclarationInDeconstruction.Execute();
+            break;
+        default:
+            return;
+    }
+
+    Console.Write("Press any key to continue...");
+    Console.ReadKey();
+}

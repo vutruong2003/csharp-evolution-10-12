@@ -14,12 +14,12 @@ public class ListPatterns : IExample
 
         Console.WriteLine($"Numbers is [1, 2, 5]: {numbers is [1, 2, 5]}");
         Console.WriteLine($"Numbers is [1, 2, 2]: {numbers is [1, 2, 2]}");
-        Console.WriteLine($"Numbers is numbers is [1, 2, 2, 3, 5]: {numbers is [1, 2, 2, 3, 5]}");
-        Console.WriteLine($"Numbers is numbers is [1, 2, ..]: {numbers is [1, 2, ..]}");
-        Console.WriteLine($"Numbers is numbers is  [.., 2, 5]: {numbers is [.., 2, 5]}");
-        Console.WriteLine($"Numbers is numbers is [.., 4]: {numbers is [.., 4]}");
+        Console.WriteLine($"Numbers is [1, 2, 2, 3, 5]: {numbers is [1, 2, 2, 3, 5]}");
+        Console.WriteLine($"Numbers is [1, 2, ..]: {numbers is [1, 2, ..]}");
+        Console.WriteLine($"Numbers is [.., 2, 5]: {numbers is [.., 2, 5]}");
+        Console.WriteLine($"Numbers is [.., 4]: {numbers is [.., 4]}");
 
-        Console.WriteLine($"Numbers is numbers is [0 or 1 or 2, < 3, >= 4]: {numbers is [0 or 1 or 2, < 3, >= 4]}");
+        Console.WriteLine($"Numbers is [0 or 1 or 2, < 3, >= 4]: {numbers is [0 or 1 or 2, < 3, >= 4]}");
 
         if (numbers is [var first, .. var rest])
         {
@@ -32,24 +32,30 @@ public class ListPatterns : IExample
         var emptyName = new string[0];
         var theName = new string[] { "Vu Truong" };
         var theNameBroken = new string[] { "Vu", "TruongP" };
-        var theNameBroken2 = new string[] { "Vu", "Truong", "2022" };
+        var theNameBroken2 = new string[] { "Vu", "Truong", "2024" };
+        var theNameFourMember = new string[] { "Vu", "Truong", "2024", "Techtalk" };
+        var largeName = new string[] { "Vu", "Truong", "2024", "Techtalk", "Mar", "C#" };
 
-        var funcs = (string[] pattern) =>
+        var nameMaker = (string[] pattern) =>
         {
             var name = pattern switch
             {
-            [] => "Empty",
-            [string fullName] => fullName,
-            [string firstName, string lastName] => $"{firstName} {lastName}",
-                _ => "Other case..."
+                [] => "Empty",
+                [string fullName] => $"(1) {fullName}",
+                [string firstName, string lastName] => $"(2) {firstName} {lastName}",
+                [..] when pattern.Length > 3 && pattern.Length <= 5 => "Array more than 3 members",
+                [..] when pattern.Length > 5 => "Large array",
+                    _ => "Default case..."
             };
 
             return name;
         };
 
-        Console.WriteLine($"Name []: {funcs(emptyName)}");
-        Console.WriteLine($"Name [Vu Truong]: {funcs(theName)}");
-        Console.WriteLine($"Name [Vu, TruongP]: {funcs(theNameBroken)}");
-        Console.WriteLine($"Name [Vu, Truong, 2022]: {funcs(theNameBroken2)}");
+        Console.WriteLine($"Name []: {nameMaker(emptyName)}");
+        Console.WriteLine($"Name [Vu Truong]: {nameMaker(theName)}");
+        Console.WriteLine($"Name [Vu, TruongP]: {nameMaker(theNameBroken)}");
+        Console.WriteLine($"Name [Vu, Truong, 2024]: {nameMaker(theNameBroken2)}");
+        Console.WriteLine($"Name [Vu, Truong, 2024, Techtalk]: {nameMaker(theNameFourMember)}");
+        Console.WriteLine($"Name [Vu, Truong, 2024, Techtalk, Mar, C#]: {nameMaker(largeName)}");
     }
 }

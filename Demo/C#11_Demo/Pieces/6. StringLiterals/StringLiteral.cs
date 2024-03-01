@@ -10,16 +10,16 @@ public class StringLiteral : IExample
     public static void Execute()
     {
         // Normal way: use the '\' for special chars
-        var xml = "<?xml version=\"1.0\" enconding=\"UTF-8\" ?>";
+        var xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>";
 
         // Normal way: use the @ for special chars
-        var xml2 = @"<?xml version=""1.0"" enconding=""UTF-8"" ?>";
+        var xml2 = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>";
 
         // New 
-        var xml3 = """"<?xml version=""1.0"" enconding="UTF-8" ?>"""";
+        var xml3 = """"<?xml version=""1.0"" encoding="UTF-8" ?>"""";
 
         var version = "1.0";
-        var xml4 = $$"""<?xml version="{{{version}}}" enconding="UTF-8" ?>""";
+        var xml4 = $$"""<?xml version="{{{version}}}" encoding="UTF-8" ?>""";
 
         Console.WriteLine("Normal approach: ");
         Console.WriteLine(xml);
@@ -54,6 +54,22 @@ public class StringLiteral : IExample
         var json3 = $$"""
             {
                 "name": "{{name}}"
+                "tags": [
+                    ".net",
+                    "present"
+                ],
+                "author": {
+                    "position": ".net developer",
+                    "date": "01/03/2024",
+                    "agenda": [
+                        "Overview",
+                        "C#10",
+                        "C#11",
+                        "C#12",
+                        "Source Gen"
+                    ]
+                }
+                
             }
             """;
 

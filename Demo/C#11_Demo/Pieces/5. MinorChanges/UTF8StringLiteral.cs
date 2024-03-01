@@ -3,7 +3,7 @@
 namespace C_11_Demo.MinorChanges;
 internal class UTF8StringLiteral : IExample
 {
-    public static int Order => 16;
+    public static int Order => 9;
 
     public static string Name => nameof(UTF8StringLiteral);
 

@@ -31,6 +31,11 @@ internal class Room
         Subject = "Default";
         Members = new List<Person>();
     }
+
+    public Room(List<Person> members)
+    {
+        Members = members;
+    }
 }
 
 internal class ContactService
@@ -49,6 +54,14 @@ internal class ContactService
         var room = new Room
         {
             Name = "Room"
+        };
+
+        var members = Enumerable.Empty<Person>().ToList();
+
+        var room2 = new Room(members)
+        {
+            Name = "Class 01",
+            Subject = "Default",
         };
 
         room.Members.Add(person);

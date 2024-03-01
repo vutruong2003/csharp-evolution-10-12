@@ -1,6 +1,4 @@
-﻿using C_11_Demo.Pieces.Decorator;
-
-namespace C_11_Demo.Pieces.Decorator;
+﻿namespace C_11_Demo.Pieces.Decorator;
 internal class SceneFactory
 {
     public static IAction GetActor<T>() where T : class, IAction, new()

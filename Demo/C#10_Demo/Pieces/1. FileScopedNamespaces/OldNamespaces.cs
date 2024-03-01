@@ -4,3 +4,10 @@
     {
     }
 }
+
+namespace C_10_Demo.Pieces.OldNamespaces2
+{
+    internal class OldNamespaces2
+    {
+    }
+}

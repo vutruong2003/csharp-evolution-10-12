@@ -10,9 +10,9 @@ internal class NameAttribute : Attribute
     }
 }
 
-internal class ExtendedNameOf : IExample
+internal class ExtendedNameOf
 {
-    public static int Order => 15;
+    public static int Order => 9;
 
     public static string Name => nameof(ExtendedNameOf);
 
