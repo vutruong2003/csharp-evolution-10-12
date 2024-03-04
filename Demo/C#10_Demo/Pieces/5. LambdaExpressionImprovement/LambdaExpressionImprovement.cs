@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace C_10_Demo.Pieces;
+﻿namespace C_10_Demo.Pieces;
 public class LambdaExpressionImprovement
 {
     public static void Execute()

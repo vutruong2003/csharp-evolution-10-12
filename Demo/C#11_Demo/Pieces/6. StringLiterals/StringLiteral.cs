@@ -16,7 +16,9 @@ public class StringLiteral : IExample
         var xml2 = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>";
 
         // New 
-        var xml3 = """"<?xml version=""1.0"" encoding="UTF-8" ?>"""";
+        var xml3 = """"
+            "<?xml version="1.0" encoding="UTF-8" ?>
+            """";
 
         var version = "1.0";
         var xml4 = $$"""<?xml version="{{{version}}}" encoding="UTF-8" ?>""";

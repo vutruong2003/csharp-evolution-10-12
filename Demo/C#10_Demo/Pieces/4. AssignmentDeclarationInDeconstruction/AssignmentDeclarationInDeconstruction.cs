@@ -1,4 +1,5 @@
-﻿namespace C_10_Demo.Pieces;
+﻿global using System.Diagnostics.CodeAnalysis;
+namespace C_10_Demo.Pieces;
 
 public class AssignmentDeclarationInDeconstruction
 {

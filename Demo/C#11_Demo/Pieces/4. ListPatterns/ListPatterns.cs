@@ -45,7 +45,7 @@ public class ListPatterns : IExample
                 [string firstName, string lastName] => $"(2) {firstName} {lastName}",
                 [..] when pattern.Length > 3 && pattern.Length <= 5 => "Array more than 3 members",
                 [..] when pattern.Length > 5 => "Large array",
-                    _ => "Default case..."
+                _ => "Default case..."
             };
 
             return name;
