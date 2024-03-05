@@ -9,4 +9,5 @@ Agenda
 3. What's new in C# 11?
 4. What's new in C# 12?
 5. What's next?
-6. Discuss
+6. Source Generation
+7. Discuss
