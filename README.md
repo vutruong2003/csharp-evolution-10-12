@@ -1,6 +1,11 @@
 # csharp-evolution-10-12
 C# Evolution from version 10 to 12
 
+## Presentation info
+- Time: Friday 1st Mar 2024 - 14:00
+- Author: Vu.Truong
+- Record: https://drive.google.com/file/d/1vn27_KNNa7w6zyTu4wN3s6SWpvsrdJh3/view
+
 ## Agenda
 
 1. About C# and Dotnet
